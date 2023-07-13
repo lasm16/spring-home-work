@@ -14,7 +14,7 @@ public class CsvLineServiceImpl implements CsvLineService {
         this.dao = dao;
     }
 
-    public List<CsvLine> getCsvLines() {
+    public List<CsvLine> showQuestionsAndAnswers() {
         return dao.getCsvLines();
     }
 }

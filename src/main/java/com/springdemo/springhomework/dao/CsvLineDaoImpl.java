@@ -15,16 +15,16 @@ public class CsvLineDaoImpl implements CsvLineDao {
     private final String resourceName = "questions.csv";
 
     public List<CsvLine> getCsvLines() {
-        var questions = new ArrayList<CsvLine>();
+        var list = new ArrayList<CsvLine>();
         var resource = this.getClass().getClassLoader().getResourceAsStream(resourceName);
         try (Scanner rowScanner = new Scanner(resource)) {
             while (rowScanner.hasNextLine()) {
                 var line = Arrays.asList(rowScanner.nextLine().split(COMMA_DELIMITER));
                 var answers = line.stream().skip(1).toList();
                 var question = line.get(0);
-                questions.add(new CsvLine(question, answers));
+                list.add(new CsvLine(question, answers));
             }
         }
-        return questions;
+        return list;
     }
 }

@@ -11,7 +11,7 @@ public class SpringHomeWorkApplication {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringHomeWorkApplication.class);
         CsvLineService service = context.getBean(CsvLineService.class);
 
-        var lines = service.getCsvLines();
+        var lines = service.showQuestionsAndAnswers();
         lines.forEach(x -> {
             System.out.println(x.getQuestion());
             System.out.println(x.getAnswersList());
