@@ -19,9 +19,10 @@ class SpringHomeWorkApplicationTests {
     void shouldReturnQuestion() {
         var questionExp = "Когда была выпущена первая компьютерная игра?";
 
-        var service = questionService.getQuestionsAndAnswers();
-        var questionAct = service.get(0).getQuestion();
+        var lines = questionService.getLines();
+        var questionAct = lines.get(0).getQuestion();
 
+        System.out.println(questionAct);
         assertEquals(questionExp, questionAct);
     }
 
@@ -29,8 +30,8 @@ class SpringHomeWorkApplicationTests {
     void shouldReturnAnswers() {
         var answersExp = Arrays.asList("1975", "2001", "1958", "1999");
 
-        var service = questionService.getQuestionsAndAnswers();
-        var answersAct = service.get(0).getAnswersList();
+        var lines = questionService.getLines();
+        var answersAct = lines.get(0).getAnswersList();
 
         assertEquals(answersExp, answersAct);
     }

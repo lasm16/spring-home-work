@@ -14,11 +14,11 @@ public class CsvLineServiceImpl implements CsvLineService {
         this.dao = dao;
     }
 
-    public List<CsvLine> getQuestionsAndAnswers() {
+    public List<CsvLine> getLines() {
         return dao.getCsvLines();
     }
 
-    public void showQuestionsAndAnswers(){
+    public void showLines(){
         var lines = dao.getCsvLines();
         lines.forEach(x -> {
             System.out.println(x.getQuestion());
